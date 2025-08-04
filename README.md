@@ -124,4 +124,4 @@ export const createUser = async (req: Request, res: Response) => {
 };
 ```
 
-But middleware-based validation with Zod helps us decouple validation logic from your controller, making your code more modular, testable, and reusable. Hence we have used middleware.
+But middleware-based validation with Zod helps us decouple validation logic from controller, making code more modular, testable, and reusable. Hence we have used middleware.
