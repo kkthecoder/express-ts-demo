@@ -15,16 +15,16 @@ export default class UserService {
    * Create a new user.
    * @param {CreateUserDto} userData - Validated user data.
    */
-  async createUser(userData: CreateUserDto) {
-    return await this.userRepository.createUser(userData);
+  createUser(userData: CreateUserDto) {
+    return this.userRepository.createUser(userData);
   }
 
   /**
    * Retrieve a user by ID.
    * @param {string} id - The ID of the user to retrieve.
    */
-  async getUserById(id: string) {
-    return await this.userRepository.findUserById(id);
+  getUserById(id: string) {
+    return this.userRepository.findUserById(id);
   }
 
   /**
@@ -32,23 +32,23 @@ export default class UserService {
    * @param {string} id - The ID of the user to update.
    * @param {UpdateUserDto} updateData - The data to update.
    */
-  async updateUserById(id: string, updateData: UpdateUserDto) {
-    return await this.userRepository.updateUserById(id, updateData);
+  updateUserById(id: string, updateData: UpdateUserDto) {
+    return this.userRepository.updateUserById(id, updateData);
   }
 
   /**
    * Delete a user by ID.
    * @param {string} id - The ID of the user to delete.
    */
-  async deleteUserById(id: string) {
-    return await this.userRepository.deleteUserById(id);
+  deleteUserById(id: string) {
+    return this.userRepository.deleteUserById(id);
   }
 
   /**
    * Retrieve all users.
    */
-  async getAllUsers() {
-    return await this.userRepository.findAllUsers();
+  getAllUsers() {
+    return this.userRepository.findAllUsers();
   }
 }
 

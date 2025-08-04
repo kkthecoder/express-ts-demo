@@ -9,17 +9,17 @@ export default class UserRepository {
    * Create a new user.
    * @param {CreateUserDto} userData - Data for the new user.
    */
-  async createUser(userData: CreateUserDto) {
+  createUser(userData: CreateUserDto) {
     const user = new User(userData);
-    return await user.save();
+    return user.save();
   }
 
   /**
    * Find a user by ID.
    * @param {string} id - The ID of the user to find.
    */
-  async findUserById(id: string) {
-    return await User.findById(id);
+  findUserById(id: string) {
+    return User.findById(id);
   }
 
   /**
@@ -27,23 +27,23 @@ export default class UserRepository {
    * @param {string} id - The ID of the user to update.
    * @param {UpdateUserDto} updateData - The data to update.
    */
-  async updateUserById(id: string, updateData: UpdateUserDto) {
-    return await User.findByIdAndUpdate(id, updateData, { new: true });
+  updateUserById(id: string, updateData: UpdateUserDto) {
+    return User.findByIdAndUpdate(id, updateData, { new: true });
   }
 
   /**
    * Delete a user by ID.
    * @param {string} id - The ID of the user to delete.
    */
-  async deleteUserById(id: string) {
-    return await User.findByIdAndDelete(id);
+  deleteUserById(id: string) {
+    return User.findByIdAndDelete(id);
   }
 
   /**
    * Find all users.
    */
-  async findAllUsers() {
-    return await User.find();
+  findAllUsers() {
+    return User.find();
   }
 }
 /* 
